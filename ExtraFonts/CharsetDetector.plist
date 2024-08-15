@@ -1,0 +1,32 @@
+(
+  {
+    detector 		= "_off_";
+  },
+  {
+    detector 		= "universal_charset_detector";
+  },
+  {
+    detector 		= "ja_parallel_state_machine";
+  },
+  {
+    detector 		= "ko_parallel_state_machine";
+  },
+  {
+    detector 		= "zhtw_parallel_state_machine";
+  },
+  {
+    detector 		= "zhcn_parallel_state_machine";
+  },
+  {
+    detector 		= "zh_parallel_state_machine";
+  },
+  {
+    detector 		= "cjk_parallel_state_machine";
+  },
+  {
+    detector 		= "ruprob";
+  },
+  {
+    detector 		= "ukprob";
+  }
+)

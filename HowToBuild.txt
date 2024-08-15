@@ -1,0 +1,65 @@
+Build documentation for ExtraFonts
+
+0. Build Requirements
+
+Because ExtraFonts is depend on Camino, you need to get Camino's
+source and build it. For more detail about building Camino, visit
+Mozilla Developer Center (Devmo).
+ http://developer.mozilla.org/
+
+To build ExtraFonts, Xcode 2.2.1 is required.
+And some software is required to build Camino. See
+ http://developer.mozilla.org/en/docs/Mac_OS_X_Build_Prerequisites
+
+1. How to checkout Camino source via CVS:
+
+(1) Login to CVS server
+  $ cvs -d :pserver:anonymous@cvs-mirror.mozilla.org:/cvsroot login
+  <here, password is "anonymous">
+
+(2) Checkout source
+  $ cvs -d :pserver:anonymous@cvs-mirror.mozilla.org:/cvsroot €
+   checkout -r CAMINO_1_0rc1_RELEASE mozilla/client.mk mozilla/camino/config
+
+ # Because ExtraFonts 1.0.6 is based on "CAMINO_1_0rc1_RELEASE" revision,
+ # so when you checkout, don't forget to specify CVS tag.
+
+(3) Configuring build options
+  $ cd mozilla
+  $ vi .mozconfig (add following three lines)
+    mk_add_options MOZ_OBJDIR=$topsrcdir/OBJ
+    . $topsrcdir/camino/config/mozconfig
+    . $topsrcdir/build/macosx/universal/mozconfig
+
+(4) Build Camino
+  $ make -f client.mk build
+
+(5) Prepare universal binary version of dynamic link libraries for Xcode
+  $ cd dist/bin
+  $ mkdir backup.dylib
+  $ mv *.dylib backup.dylib
+  $ ln -s ../universal/camino/Camino.app/Contents/MacOS/*.dylib .
+
+2. How to build ExtraFonts:
+
+(1) Copy source
+ Copy ExtraFonts.xcodeproj and ExtraFonts folder into Camino's source tree.
+  - ExtraFonts.xcodeproj:
+    => mozilla/camino/ExtraFonts.xcodeproj (same location of Camino.xcode)
+  - Info-ExtraFontsPrefPane.plist:
+    => mozilla/camino/Info-ExtraFontsPrefPane.plist
+  - ExtraFonts folder:
+    => mozilla/camino/PreferencePanes/ExtraFonts
+
+(2) Build
+ Open ExtraFonts.xcodeproj with Xcode and click "Build" button in the
+ toolbar. Then ExtraFonts.prefPane will be built in the
+ mozilla/camino/build/Deployment.
+ 
+(3) Test and debug
+ Just switch target from ExtraFonts to Camino and click "Build and Go" or
+ "Build and Debug".
+
+(4) Add localized resource (option)
+ To add Japanede localized resource, copy ExtraFonts/Japanede.lproj into
+ ExtraFonts.prefPane/Contents/Resources manually.

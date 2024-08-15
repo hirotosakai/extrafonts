@@ -1,0 +1,13 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {showAllClicked = id; }; 
+            CLASS = MVCarbonFontPanelController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {mFilterTextField = NSTextField; mFontTableView = NSTableView; }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

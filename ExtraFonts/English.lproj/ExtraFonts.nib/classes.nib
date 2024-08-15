@@ -1,0 +1,72 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = FontReceiverView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {delegate = id; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            ACTIONS = {
+                advancedFontsDone = id; 
+                buttonClicked = id; 
+                colorChanged = id; 
+                defaultEncodingClicked = id; 
+                defaultFontMatrixChanged = id; 
+                encodingDetectorChanged = id; 
+                fontRegionPopupClicked = id; 
+                fontSelectButtonClicked = id; 
+                fontSizeChanged = id; 
+                resetColorsToDefaults = id; 
+                resetEncodingsToDefaults = id; 
+                resetFontsToDefaults = id; 
+                showAdvancedFontsDialog = id; 
+            }; 
+            CLASS = JpGrFanSakaiCaminoPreferenceExtraFonts; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                mAdvancedCancelButton = NSButton; 
+                mAdvancedFontsDialog = NSPanel; 
+                mAdvancedFontsLabel = NSTextField; 
+                mAdvancedOKButton = NSButton; 
+                mBackgroundColorWell = NSColorWell; 
+                mCursiveFontButton = NSButton; 
+                mDefaultEncodingPopup = NSPopUpButton; 
+                mDefaultFontMatrix = NSMatrix; 
+                mEncodingDetectorPopup = NSPopUpButton; 
+                mFantasyFontButton = NSButton; 
+                mFixedFontSizeTextField = NSTextField; 
+                mFontRegionPopup = NSPopUpButton; 
+                mMinimumFontSizeTextField = NSTextField; 
+                mMonospaceFontButton = NSButton; 
+                mSansSerifFontButton = NSButton; 
+                mSansSerifFontTextField = NSTextField; 
+                mSerifFontButton = NSButton; 
+                mSerifFontTextField = NSTextField; 
+                mTabView = NSTabView; 
+                mTextColorWell = NSColorWell; 
+                mUnderlineLinksCheckbox = NSButton; 
+                mUnvisitedLinksColorWell = NSColorWell; 
+                mUseMyColorsCheckbox = NSButton; 
+                mVariableFontSizeTextField = NSTextField; 
+                mVisitedLinksColorWell = NSColorWell; 
+            }; 
+            SUPERCLASS = PreferencePaneBase; 
+        }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = id; 
+                "_initialKeyView" = id; 
+                "_lastKeyView" = id; 
+                "_window" = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = PreferencePaneBase; LANGUAGE = ObjC; SUPERCLASS = NSPreferencePane; }
+    ); 
+    IBVersion = 1; 
+}
